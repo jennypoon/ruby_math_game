@@ -1,5 +1,7 @@
 class MathQuestions
 
+  attr_accessor :firstnum, :secondnum, :operation
+
   def initialize
     @firstnum = rand(1...10)
     @secondnum = rand(1...10)
@@ -21,22 +23,14 @@ class MathQuestions
     "#{@firstnum}#{@operation}#{@secondnum}"
   end
 
-  def math_evaluation
-    eval(math_question_output)
+  def math_evaluation(answer)
+    correct_result = eval(math_question_output)
+    correct_result == answer
   end
 
-  def evaluation(answer)
-    correct_result = eval(math_question_output)
-    if (correct_result == answer)
-      puts "Correct!"
-    else
-      puts "Lose a life!"
-    end
-  end
 end
 
-question = MathQuestions.new
-p question.math_question_output
-p question.math_evaluation
-result = gets.chomp
-question.evaluation(result.to_i)
+# question = MathQuestions.new
+# p question.math_question_output
+# result = gets.chomp
+# question.math_evaluation(result.to_i)
