@@ -1,3 +1,5 @@
+require './player.rb'
+
 class MathQuestions
 
   attr_accessor :firstnum, :secondnum, :operation
@@ -18,18 +20,23 @@ class MathQuestions
     #     @operation_sign = "x"
     # end
 
-
   def math_question_generator
     "#{@firstnum}#{@operation}#{@secondnum}"
   end
 
   def math_question_output
-    "What is #{@firstnum} #{@operation} #{@secondnum}"
+    "What is #{@firstnum} #{@operation} #{@secondnum} = "
   end
 
-  def math_evaluation(answer)
+  def is_correct?(answer)
     correct_result = eval(math_question_generator)
-    correct_result == answer
+    if correct_result == answer
+      print "==== CORRECT! ==== "
+      return true
+    else
+      print "==== INCORRECT! ==== "
+      return false
+    end
   end
 
 end
@@ -37,4 +44,4 @@ end
 # question = MathQuestions.new
 # p question.math_question_output
 # result = gets.chomp
-# question.math_evaluation(result.to_i)
+# question.is_correct?(result.to_i)
