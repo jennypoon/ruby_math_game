@@ -9,7 +9,7 @@ attr_accessor :lives, :name, :score
   end
 
   def lose_life
-    @live -= 1
+    @lives -= 1
   end
 
   def add_score
@@ -17,6 +17,3 @@ attr_accessor :lives, :name, :score
   end
 
 end
-
-# p1 = Player.new("Player 1")
-# p2 = Player.new("Player 2")
