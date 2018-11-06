@@ -12,7 +12,7 @@ attr_accessor :lives, :name, :score
     @live -= 1
   end
 
-  def score
+  def add_score
     @score += 1
   end
 
