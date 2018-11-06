@@ -19,12 +19,16 @@ class MathQuestions
     # end
 
 
-  def math_question_output
+  def math_question_generator
     "#{@firstnum}#{@operation}#{@secondnum}"
   end
 
+  def math_question_output
+    "What is #{@firstnum} #{@operation} #{@secondnum}"
+  end
+
   def math_evaluation(answer)
-    correct_result = eval(math_question_output)
+    correct_result = eval(math_question_generator)
     correct_result == answer
   end
 
